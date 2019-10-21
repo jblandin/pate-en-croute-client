@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 import { AppTimerService } from './services';
 import { HhmmssPipe } from './pipes';
 
@@ -13,7 +14,8 @@ import { HhmmssPipe } from './pipes';
     AppTimerService
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     HhmmssPipe

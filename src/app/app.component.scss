@@ -14,3 +14,16 @@
 .app-links {
   display: none;
 }
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  &.connected {
+    background-color: #00ff0030;
+  }
+  &.disconnected {
+    background-color: #ff000030;
+  }
+}

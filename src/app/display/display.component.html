@@ -1,3 +1,6 @@
 <small class="text-muted">Status : {{appTimer.state}}</small>
+<h2 class="app-timer">Prochain mouvement</h2>
 <h1 *ngIf="appTimer" class="app-timer">{{appTimer.timeleft | hhmmss}}</h1>
 
+<h2 class="app-timer secondary">Mouvement suivant</h2>
+<h1 *ngIf="appTimer" class="app-timer secondary">{{appTimer.timeleft_next | hhmmss}}</h1>

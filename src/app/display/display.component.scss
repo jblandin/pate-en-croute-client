@@ -1,4 +1,20 @@
-.app-timer {
+h1.app-timer {
   font-size: 280px;
   text-align: center;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: whitesmoke;
+  &.secondary {
+    font-size: 40px;
+  }
+}
+
+h2.app-timer {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 400;
+  color: #90846b;
+  &.secondary {
+    font-size: 40px;
+  }
 }

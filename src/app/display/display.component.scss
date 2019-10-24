@@ -1,20 +1,47 @@
+@import '../../style/vars';
+
+
 h1.app-timer {
-  font-size: 280px;
+  line-height: 0.8;
+  margin-top: 0.1em;
+  font-size: 400px;
   text-align: center;
   font-weight: 600;
   font-family: sans-serif;
-  color: whitesmoke;
+  color: $clr-primary;
+  &.secondary {
+    font-size: 200px;
+  }
+}
+
+h2.app-timer {
+  line-height: 1;
+  font-size: 80px;
+  text-align: center;
+  font-weight: 400;
+  color: $clr-secondary;
   &.secondary {
     font-size: 40px;
   }
 }
 
-h2.app-timer {
-  font-size: 80px;
-  text-align: center;
-  font-weight: 400;
-  color: #90846b;
-  &.secondary {
-    font-size: 40px;
-  }
+hr.app-timer-separator {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $clr-secondary;
+  margin: 5em 0;
+  padding: 0;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.app-timer-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 1;
+  padding: 5px;
+  color:$clr-muted;
 }

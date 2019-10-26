@@ -13,7 +13,7 @@ export class ConfigService {
 
   private readonly CONFIG_URL = 'assets/config/config.json';
   private configuration$: Observable<Configuration>;
-  
+
   constructor(private http: HttpClient) { }
 
   public loadConfigurations(): Observable<Configuration> {

@@ -1,8 +1,8 @@
 import * as io from 'socket.io-client';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { AppTimer, Events } from '../models';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,12 @@ export class AppTimerService {
   private socket;
   private appTimer$ = new BehaviorSubject({} as AppTimer);
 
-  constructor() {
-    this.socket = io(environment.server);
-    this.socket
-      .on(Events.APP_TIMER, (appTimer: AppTimer) => this.appTimer$.next(appTimer));
+  constructor(private configService: ConfigService) {
+    configService.loadConfigurations().subscribe(conf => {
+      this.socket = io(conf.server);
+      this.socket
+        .on(Events.APP_TIMER, (appTimer: AppTimer) => this.appTimer$.next(appTimer));
+    });
   }
 
   public isConnected = () => this.socket.connected as boolean;

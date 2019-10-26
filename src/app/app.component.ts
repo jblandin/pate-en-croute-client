@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppTimerService, AppTimer } from './core';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-root',

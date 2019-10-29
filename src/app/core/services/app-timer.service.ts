@@ -19,12 +19,12 @@ export class AppTimerService {
     });
   }
 
-  public isConnected = () => this.socket.connected as boolean;
+  public isConnected = () => this.socket && this.socket.connected as boolean;
 
   public getAppTimer = () => this.appTimer$;
 
-  public startTimer = () => this.socket.emit(Events.START);
-  public initTimer = () => this.socket.emit(Events.INIT);
-  public pauseTimer = () => this.socket.emit(Events.PAUSE);
-  public stopTimer = () => this.socket.emit(Events.STOP);
+  public startTimer = () => this.socket && this.socket.emit(Events.START);
+  public initTimer = () => this.socket && this.socket.emit(Events.INIT);
+  public pauseTimer = () => this.socket && this.socket.emit(Events.PAUSE);
+  public stopTimer = () => this.socket && this.socket.emit(Events.STOP);
 }

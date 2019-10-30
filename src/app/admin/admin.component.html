@@ -1,7 +1,21 @@
 <app-display></app-display>
-<div class="text-center admin-buttons">
-<button type="button" class="btn btn-lg btn-outline-success mr-2" (click)="timerService.startTimer()">Start</button>
-<button type="button" class="btn btn-lg btn-outline-warning mr-2" (click)="timerService.pauseTimer()">Pause</button>
-<button type="button" class="btn btn-lg btn-outline-danger mr-2" (click)="timerService.stopTimer()">Stop</button>
-<button type="button" class="btn btn-lg btn-outline-primary mr-2" (click)="timerService.initTimer()">Init</button>
+<div class="row">
+  <div class="admin-buttons" *ngIf="!isInitTime">
+    <button type="button" class="btn btn-lg btn-outline-success mr-2" (click)="timerService.startTimer()">Start</button>
+    <button type="button" class="btn btn-lg btn-outline-warning mr-2" (click)="timerService.pauseTimer()">Pause</button>
+    <button type="button" class="btn btn-lg btn-outline-danger mr-2" (click)="timerService.stopTimer()">Stop</button>
+    <button type="button" class="btn btn-lg btn-outline-primary mr-2" (click)="isInitTime = true">Init</button>
+  </div>
+  <div class="admin-buttons" *ngIf="isInitTime">
+    <form class="form-inline" [formGroup]="dureeForm">
+      <div class="admin-form">
+          <input type="text" name="duree" id="duree"
+                 class="form-control form-control-lg col-3 mr-2"
+                 placeholder="HH:MM:SS" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}"
+                 required formControlName="duree">
+          <button type="button" class="btn btn-lg btn-outline-primary mr-2" (click)="launchInit()">Enregistrer</button>
+          <button type="button" class="btn btn-lg btn-outline-secondary mr-2" (click)="isInitTime = false">Annuler</button>
+        </div>
+    </form>
+  </div>
 </div>

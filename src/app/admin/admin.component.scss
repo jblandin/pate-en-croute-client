@@ -1,7 +1,21 @@
+@import '../../styles';
+
 div.admin-buttons {
   position: fixed;
   bottom: 10px;
   width: 80%;
   margin: 0 0 0 -40%;
   left: 50%;
+  @extend .text-center;
+}
+
+div.admin-form {
+  @extend .admin-buttons;
+  #duree {
+    max-width: 200px;
+  }
+}
+
+.ng-invalid .ng-touched {
+  @extend .is-invalid;
 }

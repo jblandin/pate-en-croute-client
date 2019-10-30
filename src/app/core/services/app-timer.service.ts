@@ -24,7 +24,7 @@ export class AppTimerService {
   public getAppTimer = () => this.appTimer$;
 
   public startTimer = () => this.socket && this.socket.emit(Events.START);
-  public initTimer = () => this.socket && this.socket.emit(Events.INIT);
+  public initTimer = (secondes: number) => this.socket && this.socket.emit(Events.INIT, secondes);
   public pauseTimer = () => this.socket && this.socket.emit(Events.PAUSE);
   public stopTimer = () => this.socket && this.socket.emit(Events.STOP);
 }

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { isUndefined } from 'util';
 
 @Pipe({
   name: 'hhmmss'
@@ -14,6 +15,9 @@ export class HhmmssPipe implements PipeTransform {
   }
 
   private hhmmss(secs: number) {
+    if (isUndefined(secs) || isNaN(secs)) {
+      return '';
+    }
     let minutes = Math.floor(secs / 60);
     secs = secs % 60;
     const hours = Math.floor(minutes / 60);

@@ -7,12 +7,14 @@ import { DisplayComponent } from './display/display.component';
 import { CoreModule } from './core/core.module';
 import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DisplayHhmmssComponent } from './display/display-hhmmss.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
-    AdminComponent
+    AdminComponent,
+    DisplayHhmmssComponent
   ],
   imports: [
     BrowserModule,

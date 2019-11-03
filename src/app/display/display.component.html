@@ -1,6 +1,7 @@
 <div class="app-timer-header">
   <small>Status : {{appTimer.state}}</small><br />
-  <small>Durée d'un mouvement : {{appTimer.duration * 1000 | date:'H\'h\'mm\'m\'ss\'s\'':'UTC'}}</small>
+  <small>Durée d'un mouvement : {{appTimer.duration * 1000 | date:'H\'h\'mm\'m\'ss\'s\'':'UTC'}}</small><br />
+  <small *ngIf="appTimer.isPauseAutomatique">Pause automatique activée</small>
 </div>
 <div>
   <h2 class="app-timer">Prochain mouvement</h2>

@@ -1,22 +1,5 @@
-<div class="app-timer-header">
-  <small>Status : {{appTimer.state}}</small><br />
-  <small>Durée d'un mouvement : {{appTimer.duration * 1000 | date:'H\'h\'mm\'m\'ss\'s\'':'UTC'}}</small><br />
-  <small *ngIf="appTimer.isPauseAutomatique">Pause automatique activée</small>
-</div>
-<div>
-  <h2 class="app-timer">Prochain mouvement</h2>
-  <h1 *ngIf="appTimer" class="app-timer">
+<div class="sandglass">
+  <h1 *ngIf="appTimer" class="app-timer" [ngClass]="{'timeout-danger': appTimer.timeleft <= 10 && appTimer.timeleft >= 0, 'timeout-lost': appTimer.timeleft < 0 }">
     <app-display-hhmmss [secondes]="appTimer.timeleft"></app-display-hhmmss>
   </h1>
-  <h2 class="app-timer">{{appTimer.date_move}}</h2>
-</div>
-<div class="text-center">
-  <hr class="app-timer-separator">
-</div>
-<div>
-  <h2 class="app-timer secondary">Mouvement suivant</h2>
-  <h1 *ngIf="appTimer" class="app-timer secondary">
-    <app-display-hhmmss [secondes]="appTimer.timeleft_next"></app-display-hhmmss>
-  </h1>
-  <h2 class="app-timer secondary">{{appTimer.date_move_next}}</h2>
 </div>

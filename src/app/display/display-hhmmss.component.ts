@@ -28,10 +28,16 @@ export class DisplayHhmmssComponent implements OnInit, OnChanges {
   }
 
   private initHhmmss(secs: number) {
+    let negate = false;
     if (isUndefined(secs) || isNaN(secs)) {
       this.hh = '';
       this.mm = '';
       this.ss = '';
+      return;
+    }
+    if (secs < 0) {
+      negate = true;
+      secs = Math.abs(secs);
     }
     let minutes = Math.floor(secs / 60);
     secs = secs % 60;
@@ -41,5 +47,8 @@ export class DisplayHhmmssComponent implements OnInit, OnChanges {
     this.hh = this.pad(hours);
     this.mm = this.pad(minutes);
     this.ss = this.pad(secs);
+    if (negate) {
+      this.hh = '-' + this.hh;
+    }
   }
 }

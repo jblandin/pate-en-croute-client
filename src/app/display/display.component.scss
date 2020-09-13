@@ -57,7 +57,7 @@ div.app-timer-header {
 }
 
 h1.app-timer.timeout-lost {
-  color: red;
+  color: $clr-danger;
   text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
 }
 
@@ -70,7 +70,7 @@ h1.app-timer.timeout-danger {
 
   }
   100% {
-    color: red;
+    color: $clr-danger;
     text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-display-hhmmss',
@@ -29,7 +28,7 @@ export class DisplayHhmmssComponent implements OnInit, OnChanges {
 
   private initHhmmss(secs: number) {
     let negate = false;
-    if (isUndefined(secs) || isNaN(secs)) {
+    if (secs === undefined || isNaN(secs)) {
       this.hh = '';
       this.mm = '';
       this.ss = '';

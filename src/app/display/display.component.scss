@@ -7,7 +7,6 @@ h1.app-timer {
   //font-size: 400px;
   text-align: center;
   font-weight: 600;
-  font-family: sans-serif;
   color: $clr-primary;
   &.secondary {
     display: none;
@@ -58,7 +57,7 @@ div.app-timer-header {
 
 h1.app-timer.timeout-lost {
   color: $clr-danger;
-  text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
+  text-shadow: $clr-danger-shadow;
 }
 
 h1.app-timer.timeout-danger {
@@ -71,7 +70,7 @@ h1.app-timer.timeout-danger {
   }
   100% {
     color: $clr-danger;
-    text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
+    text-shadow: $clr-danger-shadow;
   }
 }
 body {font-size: 100%}

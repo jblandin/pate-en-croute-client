@@ -1,5 +1,5 @@
 <div class="sandglass">
-  <h1 *ngIf="appTimer" class="app-timer" [ngClass]="{'timeout-danger': appTimer.timeleft <= 10 && appTimer.timeleft >= 0, 'timeout-lost': appTimer.timeleft < 0 }">
+  <h1 *ngIf="appTimer" class="app-timer" [ngClass]="{'timeout-danger': isTimeoutDanger(), 'timeout-lost': isTimeout() }">
     <app-display-hhmmss [secondes]="appTimer.timeleft"></app-display-hhmmss>
   </h1>
 </div>

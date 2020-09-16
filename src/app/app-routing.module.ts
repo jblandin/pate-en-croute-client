@@ -7,17 +7,18 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   {
     path: 'display',
-    component: DisplayComponent,
-    data: { title: 'Heroes List' }
+    component: DisplayComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent,
-    data: { title: 'Heroes List' }
+    path: '4dm1n',
+    component: AdminComponent
   },
   { path: '',
     redirectTo: '/display',
     pathMatch: 'full'
+  },
+  { path: '**',
+    redirectTo: '/display'
   }
 ];
 
